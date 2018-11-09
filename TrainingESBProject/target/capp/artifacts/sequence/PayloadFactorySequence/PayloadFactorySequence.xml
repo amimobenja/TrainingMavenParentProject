@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="PayloadFactorySequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+  <log description="FirstLog" level="custom">
+    <property name="Log" value="*************************************Hello World"/>
+  </log>
+  <call>
+    <endpoint key="gov:/endpoints/PayloadFactory.xml"/>
+  </call>
+  <log description="FirstLog" level="custom">
+    <property name="BODY" value="json-eval($.)"/>
+  </log>
+  <payloadFactory media-type="json">
+    <format>
+			{
+				"Telkom ID":"$1",
+				"Telkom Kenya Comment": "$2"
+			}
+		</format>
+    <args>
+      <arg evaluator="xml" expression="//id"/>
+      <arg evaluator="xml" expression="//comments"/>
+    </args>
+  </payloadFactory>
+  <respond/>
+</sequence>

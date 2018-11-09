@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/jsonplaceholder" name="JSONPlaceHolder" xmlns="http://ws.apache.org/ns/synapse">
+  <resource methods="GET" protocol="http" uri-template="/users/{userId}">
+    <inSequence>
+      <sequence key="UserDataSequence"/>
+    </inSequence>
+    <outSequence/>
+    <faultSequence/>
+  </resource>
+  <resource methods="GET" protocol="http" uri-template="/albums/{albumId}">
+    <inSequence>
+      <sequence key="AlbumSequence"/>
+    </inSequence>
+    <outSequence/>
+    <faultSequence/>
+  </resource>
+  <resource methods="POST" protocol="http" uri-template="/post">
+    <inSequence>
+      <sequence key="JsonValidatorSequence"/>
+      <sequence key="JSONPlaceHolderSequence"/>
+    </inSequence>
+    <outSequence/>
+    <faultSequence/>
+  </resource>
+  <resource methods="POST" protocol="http" uri-template="/validate">
+    <inSequence>
+      <sequence key="JsonValidatorSequence"/>
+    </inSequence>
+    <outSequence/>
+    <faultSequence/>
+  </resource>
+  <resource methods="POST" protocol="http" uri-template="/template">
+    <inSequence>
+      <sequence key="AnythingTemplateSequence"/>
+    </inSequence>
+    <outSequence/>
+    <faultSequence/>
+  </resource>
+  <resource methods="GET" protocol="http" uri-template="/users">
+    <inSequence>
+      <sequence key="IteratorSequence"/>
+    </inSequence>
+    <outSequence/>
+    <faultSequence/>
+  </resource>
+  <resource methods="POST" protocol="http" uri-template="/enrich">
+    <inSequence>
+      <sequence key="EnrichSequence"/>
+    </inSequence>
+    <outSequence/>
+    <faultSequence/>
+  </resource>
+  <resource methods="POST" protocol="http" uri-template="/clone">
+    <inSequence>
+      <sequence key="CloneMediatorSequence"/>
+    </inSequence>
+    <outSequence/>
+    <faultSequence/>
+  </resource>
+  <resource methods="POST" protocol="http" uri-template="/message">
+    <inSequence>
+      <sequence key="MessageProcessorSequence"/>
+    </inSequence>
+    <outSequence/>
+    <faultSequence/>
+  </resource>
+</api>

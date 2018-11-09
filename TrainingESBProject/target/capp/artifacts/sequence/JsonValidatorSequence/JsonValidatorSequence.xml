@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="JsonValidatorSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+  <validate>
+    <schema key="gov:/schemas/validationJsonSchema.json"/>
+    <on-fail>
+      <log level="custom">
+        <property name="Logging===================" value="JSON Validation Schema"/>
+      </log>
+      <drop/>
+    </on-fail>
+  </validate>
+</sequence>

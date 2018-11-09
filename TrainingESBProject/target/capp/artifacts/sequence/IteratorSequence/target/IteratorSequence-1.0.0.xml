@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="IteratorSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+  <property name="ContentType" scope="axis2" type="STRING" value="application/json"/>
+  <property name="messageType" scope="axis2" type="STRING" value="application/json"/>
+  <log description="FirstLog" level="custom">
+    <property name="Log" value="****************** Iterator Sequence *****************"/>
+  </log>
+  <!--   HTTP_METHOD -->
+  <!--   REST_URL_POSTFIX - Remove post fix from URL -->
+  <!--   HTTP_SC -->
+  <!-- <call> -->
+  <!-- <endpoint key="gov:/endpoints/UsersInteratorEndpoint.xml" /> -->
+  <!-- </call> -->
+  <!-- <property expression="json-eval($.)" name="userData" scope="default" -->
+  <!-- type="STRING" /> -->
+  <!-- <log description="User Data Log" level="full"> -->
+  <!-- <property expression="$ctx:userData" name="User Data =====> " /> -->
+  <!-- </log> -->
+  <!-- <foreach id="FEACH_1" expression="$body/jsonArray/jsonElement" xmlns:m0="http://services.samples"> -->
+  <!-- <sequence> -->
+  <!-- <log description="User Name Log" level="custom"> -->
+  <!-- <property expression="json-eval($.name)" name="User Name =====> " /> -->
+  <!-- </log> -->
+  <!-- </sequence> -->
+  <!-- </foreach> -->
+  <!-- <iterate expression="$body/jsonArray/jsonElement"> -->
+  <!-- <target> -->
+  <!-- <sequence> -->
+  <!-- <log description="User Name Log" level="custom"> -->
+  <!-- <property expression="json-eval($.name)" name="User Name =====> " /> -->
+  <!-- </log> -->
+  <!-- </sequence> -->
+  <!-- </target> -->
+  <!-- </iterate> -->
+  <iterate expression="$body/jsonArray/jsonElement" id="iteratorId">
+    <target>
+      <sequence>
+        <property expression="json-eval($.UserId)" name="uri.var.userId"
+          scope="default" type="STRING"/>
+        <property expression="json-eval($.UserId)" name="userId"
+          scope="default" type="STRING"/>
+        <!-- <log description="User ID Log" level="custom"> -->
+        <!-- <property expression="$ctx:userId" name="User ID =====> " /> -->
+        <!-- </log> -->
+        <call>
+          <endpoint key="gov:/endpoints/UserEndPoint.xml"/>
+        </call>
+        <property expression="json-eval($.)" name="userData"
+          scope="default" type="STRING"/>
+        <!-- <log description="User Data Log" level="full"> -->
+        <!-- <property expression="$ctx:userData" name="User Data =====> " /> -->
+        <!-- </log> -->
+      </sequence>
+    </target>
+  </iterate>
+  <aggregate id="iteratorId">
+    <completeCondition>
+      <messageCount max="-1" min="-1"/>
+    </completeCondition>
+    <onComplete expression="//jsonObject" xmlns:ns="http://org.apache.synapse/xsd">
+      <log description="User Data Log" level="full"/>
+      <payloadFactory media-type="json">
+        <format>
+					{"allUserData": $1}
+				</format>
+        <args>
+          <arg evaluator="xml" expression="$body/jsonObject"/>
+        </args>
+      </payloadFactory>
+      <respond/>
+    </onComplete>
+  </aggregate>
+</sequence>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="EnrichSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+  <property name="ContentType" scope="axis2" type="STRING" value="application/json"/>
+  <property name="messageType" scope="axis2" type="STRING" value="application/json"/>
+  <log description="FirstLog" level="custom">
+    <property name="Log" value="************** Enrich Sequence *****************"/>
+  </log>
+  <property expression="json-eval($.postId)" name="uri.var.postId"
+    scope="default" type="STRING"/>
+  <call>
+    <endpoint key="gov:/endpoints/CommentsPostEndpoint.xml"/>
+  </call>
+  <property expression="//jsonArray" name="commentPostData"
+    scope="default" type="OM"/>
+  <log description="Post Data Log">
+    <property expression="$ctx:commentPostData" name="******** Comment Post Data ==== "/>
+  </log>
+  <call>
+    <endpoint key="gov:/endpoints/PostsEndPoint.xml"/>
+  </call>
+  <property expression="json-eval($.)" name="postData" scope="default" type="STRING"/>
+  <log level="full"/>
+  <log description="Post Data Log">
+    <property expression="$ctx:postData" name="Post Data ==== "/>
+  </log>
+  <!-- <enrich> -->
+  <!-- <source clone="true" xpath="$ctx:commentPostData"/> -->
+  <!-- <target action="child" xpath="$body/jsonObject"/> -->
+  <!-- </enrich> -->
+  <!-- <log level="full" /> -->
+  <!-- <enrich> -->
+  <!-- <source clone="true" xpath="$ctx:comments" /> -->
+  <!-- <target action="child" xpath="$body/jsonObject" /> -->
+  <!-- </enrich> -->
+  <clone>
+    <target>
+      <sequence>
+        <property description="Comments for the post."
+          name="commentsOne" scope="default">
+          <commentsOne>Comments - Clone One</commentsOne>
+        </property>
+        <enrich>
+          <source clone="true" xpath="$ctx:commentsOne"/>
+          <target action="child" xpath="$body/jsonObject"/>
+        </enrich>
+        <log level="full"/>
+      </sequence>
+    </target>
+    <target>
+      <sequence>
+        <property description="Comments for the post."
+          name="commentsTwo" scope="default">
+          <commentsTwo>Comments - Clone Two</commentsTwo>
+        </property>
+        <enrich>
+          <source clone="true" xpath="$ctx:commentsTwo"/>
+          <target action="child" xpath="$body/jsonObject"/>
+        </enrich>
+        <log level="full"/>
+      </sequence>
+    </target>
+  </clone>
+  <respond/>
+</sequence>

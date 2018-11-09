@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="CloneMediatorSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+  <property name="ContentType" scope="axis2" type="STRING" value="application/json"/>
+  <property name="messageType" scope="axis2" type="STRING" value="application/json"/>
+  <log description="FirstLog" level="custom">
+    <property name="Log" value="************** Clone Mediator Sequence *****************"/>
+  </log>
+  <property expression="json-eval($.requestBody)" name="requestBody"
+    scope="default" type="STRING"/>
+  <log description="Clone Mediator Data Log">
+    <property expression="$ctx:requestBody" name="******** Request Body Data ==== "/>
+  </log>
+  <log level="full"/>
+  <clone>
+    <target>
+      <sequence>
+        <property description="Comments for the post."
+          name="commentsOne" scope="default">
+          <commentsOne>Comments - Clone One</commentsOne>
+        </property>
+        <enrich>
+          <source clone="true" xpath="$ctx:commentsOne"/>
+          <target action="child" xpath="$body/jsonObject/requestBody"/>
+        </enrich>
+        <log level="full"/>
+      </sequence>
+    </target>
+    <target>
+      <sequence>
+        <property description="Comments for the post."
+          name="commentsTwo" scope="default">
+          <commentsTwo>Comments - Clone Two</commentsTwo>
+        </property>
+        <enrich>
+          <source clone="true" xpath="$ctx:commentsTwo"/>
+          <target action="child" xpath="$body/jsonObject/requestBody"/>
+        </enrich>
+        <log level="full"/>
+        <respond/>
+      </sequence>
+    </target>
+  </clone>
+  <!-- 	E.I/wso2/broker/bin -->
+  <log level="full"/>
+  <respond/>
+</sequence>

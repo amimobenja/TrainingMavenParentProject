@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-Description: TrainingClassMediatorProject
+Bundle-SymbolicName: TrainingClassMediatorProject
+Built-By: afro
+Bundle-ManifestVersion: 2
+Bnd-LastModified: 1541772260138
+Import-Package: org.apache.synapse,org.apache.synapse.mediators
+DynamicImport-Package: *
+Tool: Bnd-1.15.0
+Export-Package: ke.co.telkom.training;uses:="org.apache.synapse.mediat
+ ors,org.apache.synapse"
+Bundle-Version: 1.0.0
+Bundle-Name: TrainingClassMediatorProject
+Created-By: Apache Maven Bundle Plugin
+Build-Jdk: 1.8.0_111
+

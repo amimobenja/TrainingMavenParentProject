@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="UserDataSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+  <log description="FirstLog" level="custom">
+    <property name="Log" value="******************* User Data ******************"/>
+  </log>
+  <call>
+    <endpoint key="gov:/endpoints/UserDataEndPoint.xml"/>
+  </call>
+  <log description="FirstLog" level="custom">
+    <property name="USERS_BODY" value="json-eval($.)"/>
+  </log>
+  <respond/>
+</sequence>

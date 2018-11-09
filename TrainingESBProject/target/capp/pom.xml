@@ -10,5 +10,28 @@
   <description>TrainingESBProject_module</description>
   <modules>
     <module>artifacts/api/TrainingFirstRestAPI</module>
+    <module>artifacts/api/CompleteRestAPI</module>
+    <module>artifacts/api/PayloadFactoryAPI</module>
+    <module>artifacts/api/FilterRestAPI</module>
+    <module>artifacts/api/JSONPlaceHolder</module>
+    <module>artifacts/sequence/CommentsInSeq</module>
+    <module>artifacts/sequence/PayloadFactorySequence</module>
+    <module>artifacts/sequence/FilterRestAPISequence</module>
+    <module>artifacts/sequence/SwitchSequence</module>
+    <module>artifacts/sequence/TwoEPSequence</module>
+    <module>artifacts/sequence/JSONPlaceHolderSequence</module>
+    <module>artifacts/sequence/AlbumSequence</module>
+    <module>artifacts/sequence/UserDataSequence</module>
+    <module>artifacts/sequence/JsonValidatorSequence</module>
+    <module>artifacts/sequence/AnythingTemplateSequence</module>
+    <module>artifacts/sequence/IteratorSequence</module>
+    <module>artifacts/sequence/EnrichSequence</module>
+    <module>artifacts/sequence/CloneMediatorSequence</module>
+    <module>artifacts/sequence/message-processor-fault-sequence</module>
+    <module>artifacts/sequence/message-processor-success-sequence</module>
+    <module>artifacts/sequence/MessageProcessorSequence</module>
+    <module>artifacts/template/AnythingTemplate</module>
+    <module>artifacts/message-store/wso2-training-message-store</module>
+    <module>artifacts/message-processors/training-message-processor</module>
   </modules>
 </project>

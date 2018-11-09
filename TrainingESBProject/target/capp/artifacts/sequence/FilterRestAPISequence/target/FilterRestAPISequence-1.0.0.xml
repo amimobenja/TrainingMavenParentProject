@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="FilterRestAPISequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+  <log description="FirstLog" level="custom">
+    <property name="Log" value="*************************************Hello World"/>
+  </log>
+  <call>
+    <endpoint key="gov:/endpoints/FilterResTAPIEndPoint.xml"/>
+  </call>
+  <log description="FirstLog" level="custom">
+    <property name="BODY" value="json-eval($.)"/>
+  </log>
+  <filter regex="telkom" source="get-property('uri.var.company')">
+    <then>
+      <payloadFactory media-type="json">
+        <format>
+					{
+					"Telkom ID":"$1",
+					"Telkom Comment": "$2",
+					"Company Description": "$3"
+					}
+				</format>
+        <args>
+          <arg evaluator="xml" expression="//id"/>
+          <arg evaluator="xml" expression="//comments"/>
+          <arg evaluator="xml" expression="//description"/>
+        </args>
+      </payloadFactory>
+    </then>
+    <else>
+      <filter regex="wso2" source="get-property('uri.var.company')">
+        <then>
+          <payloadFactory media-type="json">
+            <format>
+							{
+							"Customer ID":"$1",
+							"Customer Name": "WSO2",
+							"Comment": "$2",
+							"Company Description": "$3"
+							}
+						</format>
+            <args>
+              <arg evaluator="xml" expression="//id"/>
+              <arg evaluator="xml" expression="//comments"/>
+              <arg evaluator="xml" expression="//description"/>
+            </args>
+          </payloadFactory>
+        </then>
+        <else>
+          <payloadFactory media-type="json">
+            <format>
+							{
+							"Error":"Error"
+							}
+						</format>
+            <args/>
+          </payloadFactory>
+          <property name="HTTP_SC" scope="axis2" type="STRING" value="400"/>
+        </else>
+      </filter>
+    </else>
+  </filter>
+  <respond/>
+</sequence>
