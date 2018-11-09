@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="AnythingTemplateSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+  <log description="Anything Log" level="custom">
+    <property name="xLog" value="**************** Anything Template *********************"/>
+  </log>
+  <property name="xLogTwo" scope="default" type="STRING" value="**************** Hi Telkom *********************"/>
+  <class name="ke.co.telkom.training.TestClass"/>
+  <log description="Anything Log" level="custom">
+    <property expression="$ctx:xLogTwo" name="Class Mediator Log"/>
+  </log>
+  <property name="ContentType" scope="axis2" type="STRING" value="application/json"/>
+  <property name="messageType" scope="axis2" type="STRING" value="application/json"/>
+  <property expression="json-eval($.shortCode)" name="shortCode"
+    scope="default" type="STRING"/>
+  <property expression="json-eval($.destinationMsisdn)"
+    name="destinationMsisdn" scope="default" type="STRING"/>
+  <property expression="json-eval($.message)" name="message"
+    scope="default" type="STRING"/>
+  <call-template description="Call: Anything Template" target="AnythingTemplate">
+    <with-param name="shortCode" value="{$ctx:shortCode}"/>
+    <with-param name="destinationMsisdn" value="{$ctx:destinationMsisdn}"/>
+    <with-param name="message" value="{$ctx:message}"/>
+  </call-template>
+  <respond/>
+</sequence>

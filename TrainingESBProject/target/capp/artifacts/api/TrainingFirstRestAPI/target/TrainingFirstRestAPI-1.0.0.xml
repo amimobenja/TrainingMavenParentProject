@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/trainingfirstrestapi" name="TrainingFirstRestAPI" xmlns="http://ws.apache.org/ns/synapse">
+  <resource methods="GET" protocol="http">
+    <inSequence>
+      <log description="FirstLog" level="custom">
+        <property name="First Log" value="Hello World"/>
+      </log>
+      <respond/>
+    </inSequence>
+    <outSequence/>
+    <faultSequence/>
+  </resource>
+</api>

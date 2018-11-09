@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="AlbumSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+  <log description="FirstLog" level="custom">
+    <property name="Log" value="******************* Hello World ******************"/>
+  </log>
+  <call>
+    <endpoint key="gov:/endpoints/AlbumDataEndPoint.xml"/>
+  </call>
+  <log description="Log" level="custom">
+    <property name="ALBUMS_BODY" value="json-eval($.)"/>
+  </log>
+  <respond/>
+</sequence>

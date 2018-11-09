@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/AmimoBenja" name="CompleteRestAPI" xmlns="http://ws.apache.org/ns/synapse">
+  <resource methods="GET" protocol="http" uri-template="/comments">
+    <inSequence>
+      <sequence key="CommentsInSeq"/>
+    </inSequence>
+    <outSequence/>
+    <faultSequence/>
+  </resource>
+  <resource methods="POST" protocol="http" uri-template="/comments">
+    <inSequence>
+      <sequence key="CommentsInSeq"/>
+    </inSequence>
+    <outSequence/>
+    <faultSequence/>
+  </resource>
+  <resource methods="PUT" protocol="http" uri-template="/comments/{uri.var.commentId}">
+    <inSequence>
+      <sequence key="CommentsInSeq"/>
+    </inSequence>
+    <outSequence/>
+    <faultSequence/>
+  </resource>
+  <resource methods="DELETE" protocol="http" uri-template="/comments/{uri.var.commentDelId}">
+    <inSequence>
+      <sequence key="CommentsInSeq"/>
+    </inSequence>
+    <outSequence/>
+    <faultSequence/>
+  </resource>
+</api>

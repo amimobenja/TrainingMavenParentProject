@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="TrainingFirstRestAPI" groupId="ke.co.telkom.training.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/TrainingFirstRestAPI.xml</file>
+    </artifact>
+    <artifact name="CompleteRestAPI" groupId="ke.co.telkom.training.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/CompleteRestAPI.xml</file>
+    </artifact>
+    <artifact name="CommentsInSeq" groupId="ke.co.telkom.training.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CommentsInSeq.xml</file>
+    </artifact>
+    <artifact name="PayloadFactoryAPI" groupId="ke.co.telkom.training.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/PayloadFactoryAPI.xml</file>
+    </artifact>
+    <artifact name="PayloadFactorySequence" groupId="ke.co.telkom.training.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/PayloadFactorySequence.xml</file>
+    </artifact>
+    <artifact name="FilterRestAPI" groupId="ke.co.telkom.training.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/FilterRestAPI.xml</file>
+    </artifact>
+    <artifact name="FilterRestAPISequence" groupId="ke.co.telkom.training.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/FilterRestAPISequence.xml</file>
+    </artifact>
+    <artifact name="SwitchSequence" groupId="ke.co.telkom.training.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/SwitchSequence.xml</file>
+    </artifact>
+    <artifact name="TwoEPSequence" groupId="ke.co.telkom.training.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/TwoEPSequence.xml</file>
+    </artifact>
+    <artifact name="JSONPlaceHolder" groupId="ke.co.telkom.training.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/JSONPlaceHolder.xml</file>
+    </artifact>
+    <artifact name="JSONPlaceHolderSequence" groupId="ke.co.telkom.training.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/JSONPlaceHolderSequence.xml</file>
+    </artifact>
+    <artifact name="AlbumSequence" groupId="ke.co.telkom.training.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/AlbumSequence.xml</file>
+    </artifact>
+    <artifact name="UserDataSequence" groupId="ke.co.telkom.training.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/UserDataSequence.xml</file>
+    </artifact>
+    <artifact name="JsonValidatorSequence" groupId="ke.co.telkom.training.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/JsonValidatorSequence.xml</file>
+    </artifact>
+    <artifact name="AnythingTemplate" groupId="ke.co.telkom.training.template" version="1.0.0" type="synapse/sequenceTemplate" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/templates/AnythingTemplate.xml</file>
+    </artifact>
+    <artifact name="AnythingTemplateSequence" groupId="ke.co.telkom.training.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/AnythingTemplateSequence.xml</file>
+    </artifact>
+    <artifact name="IteratorSequence" groupId="ke.co.telkom.training.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/IteratorSequence.xml</file>
+    </artifact>
+    <artifact name="EnrichSequence" groupId="ke.co.telkom.training.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/EnrichSequence.xml</file>
+    </artifact>
+    <artifact name="CloneMediatorSequence" groupId="ke.co.telkom.training.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CloneMediatorSequence.xml</file>
+    </artifact>
+    <artifact name="wso2-training-message-store" groupId="ke.co.telkom.training.message-store" version="1.0.0" type="synapse/message-store" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/message-stores/wso2-training-message-store.xml</file>
+    </artifact>
+    <artifact name="message-processor-fault-sequence" groupId="ke.co.telkom.training.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/message-processor-fault-sequence.xml</file>
+    </artifact>
+    <artifact name="message-processor-success-sequence" groupId="ke.co.telkom.training.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/message-processor-success-sequence.xml</file>
+    </artifact>
+    <artifact name="training-message-processor" groupId="ke.co.telkom.training.message-processors" version="1.0.0" type="synapse/message-processors" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/message-processors/training-message-processor.xml</file>
+    </artifact>
+    <artifact name="MessageProcessorSequence" groupId="ke.co.telkom.training.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/MessageProcessorSequence.xml</file>
+    </artifact>
+</artifacts>

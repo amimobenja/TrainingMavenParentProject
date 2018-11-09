@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="MessageProcessorSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+  <log description="FirstLog" level="custom">
+    <property name="Logging" value="***************** Message Processor ********************"/>
+  </log>
+  <property expression="json-eval($.postId)" name="uri.var.postId"
+    scope="default" type="STRING"/>
+  <call>
+    <endpoint key="gov:/endpoints/PostsEndPoint.xml"/>
+  </call>
+  <property name="postData" scope="default" type="STRING" value="json-eval($.)"/>
+  <log description="FirstLog" level="custom">
+    <property expression="$ctx:postData" name="******** Post Data ******** ==== "/>
+  </log>
+  <respond/>
+</sequence>

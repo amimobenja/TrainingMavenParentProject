@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoint name="PostsEndPoint" xmlns="http://ws.apache.org/ns/synapse">
+  <http method="get" trace="disable" uri-template="http://jsonplaceholder.typicode.com/posts/{uri.var.postId}"/>
+</endpoint>

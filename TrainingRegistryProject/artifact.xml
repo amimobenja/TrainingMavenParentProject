@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="RestTestEndpoint" groupId="ke.co.telkom.training.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
+        <item>
+            <file>RestTestEndpoint.xml</file>
+            <path>/_system/governance/endpoints</path>
+            <mediaType>application/vnd.wso2.esb.endpoint</mediaType>
+        </item>
+    </artifact>
+    <artifact name="CompleteRestEndPoint" groupId="ke.co.telkom.training.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
+        <item>
+            <file>CompleteRestEndPoint.xml</file>
+            <path>/_system/governance/endpoints</path>
+            <mediaType>application/vnd.wso2.esb.endpoint</mediaType>
+        </item>
+    </artifact>
+    <artifact name="PayloadFactory" groupId="ke.co.telkom.training.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
+        <item>
+            <file>PayloadFactory.xml</file>
+            <path>/_system/governance/endpoints</path>
+            <mediaType>application/vnd.wso2.esb.endpoint</mediaType>
+        </item>
+    </artifact>
+    <artifact name="FilterResTAPIEndPoint" groupId="ke.co.telkom.training.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
+        <item>
+            <file>FilterResTAPIEndPoint.xml</file>
+            <path>/_system/governance/endpoints</path>
+            <mediaType>application/vnd.wso2.esb.endpoint</mediaType>
+        </item>
+    </artifact>
+    <artifact name="UserDataEndPoint" groupId="ke.co.telkom.training.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
+        <item>
+            <file>UserDataEndPoint.xml</file>
+            <path>/_system/governance/endpoints</path>
+            <mediaType>application/vnd.wso2.esb.endpoint</mediaType>
+        </item>
+    </artifact>
+    <artifact name="AlbumDataEndPoint" groupId="ke.co.telkom.training.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
+        <item>
+            <file>AlbumDataEndPoint.xml</file>
+            <path>/_system/governance/endpoints</path>
+            <mediaType>application/vnd.wso2.esb.endpoint</mediaType>
+        </item>
+    </artifact>
+    <artifact name="UserEndPoint" groupId="ke.co.telkom.training.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
+        <item>
+            <file>UserEndPoint.xml</file>
+            <path>/_system/governance/endpoints</path>
+            <mediaType>application/vnd.wso2.esb.endpoint</mediaType>
+        </item>
+    </artifact>
+    <artifact name="AlbumEndpoint" groupId="ke.co.telkom.training.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
+        <item>
+            <file>AlbumEndpoint.xml</file>
+            <path>/_system/governance/endpoints</path>
+            <mediaType>application/vnd.wso2.esb.endpoint</mediaType>
+        </item>
+    </artifact>
+    <artifact name="validationJsonSchema" groupId="ke.co.telkom.training.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
+        <item>
+            <file>validationJsonSchema.json</file>
+            <path>/_system/governance/schemas</path>
+            <mediaType>application/json</mediaType>
+        </item>
+    </artifact>
+    <artifact name="UsersInteratorEndpoint" groupId="ke.co.telkom.training.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
+        <item>
+            <file>UsersInteratorEndpoint.xml</file>
+            <path>/_system/governance/endpoints</path>
+            <mediaType>application/vnd.wso2.esb.endpoint</mediaType>
+        </item>
+    </artifact>
+    <artifact name="PostsEndPoint" groupId="ke.co.telkom.training.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
+        <item>
+            <file>PostsEndPoint.xml</file>
+            <path>/_system/governance/endpoints</path>
+            <mediaType>application/vnd.wso2.esb.endpoint</mediaType>
+        </item>
+    </artifact>
+    <artifact name="CommentsPostEndpoint" groupId="ke.co.telkom.training.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
+        <item>
+            <file>CommentsPostEndpoint.xml</file>
+            <path>/_system/governance/endpoints</path>
+            <mediaType>application/vnd.wso2.esb.endpoint</mediaType>
+        </item>
+    </artifact>
+    <artifact name="message-processor-endpoint" groupId="ke.co.telkom.training.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
+        <item>
+            <file>message-processor-endpoint.xml</file>
+            <path>/_system/governance/endpoints</path>
+            <mediaType>application/vnd.wso2.esb.endpoint</mediaType>
+        </item>
+    </artifact>
+</artifacts>
